@@ -25,7 +25,7 @@ console.log("Delta: ", delta);
 if (delta < 0) { 
     console.log("O delta é negativo. Equação não possui raízes reais.")
 } else if (a === 0) { 
-    console.log("O A não pode ser igual a 0")
+    console.log("O A não pode ser igual a 0 (Nenhum numero pode ser dividido por 0)")
 } else { 
     const raizDelta = Math.sqrt(delta);
     const x1 = ((-b) + raizDelta)/(2*a);
