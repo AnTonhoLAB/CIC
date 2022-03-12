@@ -32,7 +32,3 @@ if (delta < 0) {
     const x2 = ((-b) - raizDelta)/(2*a);
     console.log(" as raízes da equação são ", x1 ," e ", x2);
 }
-
-
-
-
