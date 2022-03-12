@@ -1,18 +1,18 @@
 
 // Bhaskara correta
-var a = 1;
-var b = 12;
-var c = -13;
+const a = 1;
+const b = 12;
+const c = -13;
 
 // Delta negativo
-// var a = 2;
-// var b = 2;
-// var c = 2;
+// const a = 2;
+// const b = 2;
+// const c = 2;
 
 // Delta igual a 0
-// var a = 1;
-// var b = -10;
-// var c = 25;
+// const a = 1;
+// const b = -10;
+// const c = 25;
 
 
 // Delta = b² - 4.a.c
