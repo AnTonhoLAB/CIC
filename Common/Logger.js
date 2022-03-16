@@ -1,15 +1,19 @@
 const isLogable = true;
 
+let t0 = performance.now();
+
 function startApp() { 
     if (isLogable) { 
         console.clear();
+        t0 = performance.now();
         console.log('----- Programa Iniciado -----');
     }
 }
 
 function finishApp() { 
     if (isLogable) { 
-        console.log('----- Programa Finalizado -----');
+        const t1 = performance.now();
+        console.log(`----- Programa Finalizado com ${t1 - t0} milliseconds. -----`);
     }
 }
 
