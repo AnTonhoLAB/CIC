@@ -6,7 +6,7 @@ const prompt = require('../../../Common/PromptSync/prompt');
 logger.startApp();
 
 const notaA1 = 3
-const notaA2 = 1
+const notaA2 = 3
 const notaFinal = notaA1 + notaA2
 
 if (notaFinal >= 6) { 
@@ -18,5 +18,8 @@ if (notaFinal >= 6) {
 }
 
 console.log("Com a nota", notaFinal);
+
+const notaA3 = prompt("Digite o numero ", "number");
+console.log("numero: ", recupera);
 
 logger.finishApp();
