@@ -1,12 +1,11 @@
-// Class 3 16/03/2022
 
 const logger = require('../../../Common/Logger');
 const prompt = require('../../../Common/PromptSync/prompt');
 
 logger.startApp();
 
-const notaA1 = 3
-const notaA2 = 3
+const notaA1 = prompt("Digite a nota da N1 ", "number");
+const notaA2 = prompt("Digite a nota da N2 ", "number");
 const notaFinal = notaA1 + notaA2
 
 if (notaFinal >= 6) { 
@@ -17,9 +16,6 @@ if (notaFinal >= 6) {
     console.log("Reprovado");
 }
 
-console.log("Com a nota", notaFinal);
-
-const notaA3 = prompt("Digite o numero ", "number");
-console.log("numero: ", recupera);
+console.log("O aluno terminou com a nota", notaFinal);
 
 logger.finishApp();

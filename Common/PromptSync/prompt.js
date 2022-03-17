@@ -4,7 +4,7 @@
 // Author: Prof. Elmário Dutra
 // Version: 2021.03.08
 //
-const util = require("util")
+const util = require("../PromptSync/util")
 
 module.exports = function prompt(message, returnedType) {
     const prompt = require('prompt-sync')()
