@@ -2,6 +2,8 @@ const isLogable = true;
 
 let t0 = performance.now();
 
+const brakeLine = '\n';
+
 function startApp() { 
     if (isLogable) { 
         console.clear();
@@ -26,13 +28,21 @@ function log(messageLog) {
 
 function logl(messageLog) { 
     if(isLogable) { 
-        console.log(messageLog, "\n");
+        console.log(messageLog, brakeLine);
     }
 }
 
+function separation() { 
+    console.log(brakeLine);
+    console.log('---------------------------------');
+    console.log(brakeLine);
+}
+
+
 module.exports = { 
-    startApp: startApp,
-    finishApp: finishApp,
-    log: log,
-    logl: logl
+    startApp,
+    finishApp,
+    log,
+    logl,
+    separation
 }
