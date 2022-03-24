@@ -1,5 +1,7 @@
 const logger = require('../../../Common/Logger');
 const prompt = require('../../../Common/PromptSync/prompt');
+const exercises = require('../Aula4/ExercisesFactory');
+// const exercise1 = require('../Aula4/Exercise1')
 
 logger.startApp();
 
@@ -16,30 +18,25 @@ logger.logl("7 - Uma revendedora de carros usados paga a seus funcionários vend
 logger.logl("8 - Escreva um algoritmo para ler uma temperatura em graus Fahrenheit, calcular e escrever o \n    valor correspondente em graus Celsius (baseado na fórmula abaixo): \n               C/5=(F-32)/9 \n    Observação: Para testar se a sua resposta está correta saiba que 100°C = 212F.");
 logger.logl("9 - Faça um algoritmo que leia três notas de um aluno, calcule e escreva a média final deste \n    aluno. Considerar que a média é ponderada e que o peso das notas é 2, 3 e 5. Fórmula para \n    o cálculo da média final é: \n    mediafinal=(n1*2+n2*3+n3*5)/10");
 
-const userChoice = prompt("Escolha Uma opção:  ", "number");
+while(true) { 
 
-switch (userChoice) { 
-    case 1:
-        const number = prompt("Digite um numero: ", "number");
-        const result = previous(number);
-        const message = `O número anterior a ${number} é ${result}`
-        logger.logl(message)
-        break;
-    case 2:
-        console.log('Voce escolheu 2 - Excluir');
-        break;
-    case 3:
-        console.log('Voce escolheu 3 - Editar');
-        break;
-    default:
-        console.log('Voce escolheu uma opção invalida');   
+    const userChoice = prompt("Escolha Uma opção:  ", "number");
+    
+    switch (userChoice) { 
+        case 1:
+            exercises.exercise1.presentsExercise()
+            break;
+        case 2: 
+            break;
+        case 3:
+            break;
+        case 0: 
+            break;
+        default:
+            console.log('Voce escolheu uma opção invalida');   
+            break;
+    }
 }
-
-function previous(number) { 
-    return number - 1
-}
-
-
 
 
 logger.finishApp();
