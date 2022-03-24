@@ -18,7 +18,21 @@ function finishApp() {
     }
 }
 
+function log(messageLog) { 
+    if(isLogable) { 
+        console.log(messageLog);
+    }
+}
+
+function logl(messageLog) { 
+    if(isLogable) { 
+        console.log(messageLog, "\n");
+    }
+}
+
 module.exports = { 
     startApp: startApp,
-    finishApp: finishApp
+    finishApp: finishApp,
+    log: log,
+    logl: logl
 }
