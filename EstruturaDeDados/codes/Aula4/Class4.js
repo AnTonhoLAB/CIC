@@ -14,9 +14,29 @@ while(true) {
             exercises.exercise1.presentsExercise()
             break;
         case 2: 
+            exercises.exercise2.presentsExercise()
             break;
         case 3:
+            exercises.exercise3.presentsExercise()
             break;
+        case 4:
+            exercises.exercise3.presentsExercise()
+            break;
+        case 5:
+            exercises.exercise3.presentsExercise()
+            break;
+        case 6:
+            exercises.exercise3.presentsExercise()
+            break;
+        case 7:
+            exercises.exercise3.presentsExercise()
+            break; 
+        case 8:
+            exercises.exercise3.presentsExercise()
+            break;
+        case 9: 
+            exercises.exercise3.presentsExercise()
+            break;  
         case 0: 
             break;
         default:
