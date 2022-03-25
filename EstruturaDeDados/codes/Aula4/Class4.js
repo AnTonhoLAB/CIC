@@ -7,7 +7,7 @@ logger.startApp();
 
 while(true) { 
     logOptions();
-    const userChoice = prompt("Escolha Uma opção:  ", "number");
+    const userChoice = prompt('Escolha Uma opção:  ', 'number');
 
     if (Object.hasOwn(exercisesFactory.exercises, userChoice - 1)) { 
         exercisesFactory.exercises[userChoice - 1].presentsExercise();
@@ -16,7 +16,7 @@ while(true) {
     }
 
     logger.log('Deseja continuar?');
-    const continueChoice = prompt("digite 0 pra sair ou qualquer outro numero para continuar:  ", "number");
+    const continueChoice = prompt('digite 0 pra sair ou qualquer outro numero para continuar:  ', 'number');
     
     switch (continueChoice) { 
         case 0: 
@@ -28,11 +28,11 @@ while(true) {
 }
 
 function logOptions() { 
-    logger.logl("Escolha o exercicio");
+    logger.logl('Escolha o exercicio');
 
-    exercisesFactory.exercises.forEach(function(exercise){
-        logger.logl(exercise.description);
-    });
+    exercisesFactory.exercises.forEach((exercise) => {
+            logger.logl(exercise.description);
+        });
 }
 
 logger.finishApp();
