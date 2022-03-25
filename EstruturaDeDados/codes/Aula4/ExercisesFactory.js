@@ -9,7 +9,7 @@ const exercise8 = require('../Aula4/Exercise8');
 const exercise9 = require('../Aula4/Exercise9');
 
 module.exports = {
-    exercise1,
+    exercises: [exercise1,
     exercise2,
     exercise3,
     exercise4,
@@ -17,6 +17,6 @@ module.exports = {
     exercise6,
     exercise7,
     exercise8,
-    exercise9
+    exercise9]
 }
     
