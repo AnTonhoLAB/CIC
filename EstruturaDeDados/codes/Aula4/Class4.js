@@ -1,7 +1,6 @@
 const logger = require('../../../Common/Logger');
 const prompt = require('../../../Common/PromptSync/prompt');
 const exercisesFactory = require('../Aula4/ExercisesFactory');
-// const exercise1 = require('../Aula4/Exercise1')
 
 logger.startApp();
 
@@ -11,6 +10,8 @@ while(true) {
 
     if (Object.hasOwn(exercisesFactory.exercises, userChoice - 1)) { 
         exercisesFactory.exercises[userChoice - 1].presentsExercise();
+    } else if (userChoice == 0){ 
+        break;
     } else { 
         logger.logl('Opção invalida');
     }
@@ -18,13 +19,9 @@ while(true) {
     logger.log('Deseja continuar?');
     const continueChoice = prompt('digite 0 pra sair ou qualquer outro numero para continuar:  ', 'number');
     
-    switch (continueChoice) { 
-        case 0: 
-            break
-        default: 
-            continue
+    if (continueChoice == 0) { 
+        break;
     }
-
 }
 
 function logOptions() { 
@@ -33,6 +30,7 @@ function logOptions() {
     exercisesFactory.exercises.forEach((exercise) => {
             logger.logl(exercise.description);
         });
+    logger.logl('0 - Sair');
 }
 
 logger.finishApp();
