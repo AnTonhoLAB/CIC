@@ -38,11 +38,17 @@ function separation() {
     console.log(brakeLine);
 }
 
+function separationIn(message) { 
+    separation();
+    log(message);
+    separation();
+}
 
 module.exports = { 
     startApp,
     finishApp,
     log,
     logl,
-    separation
+    separation,
+    separationIn
 }
