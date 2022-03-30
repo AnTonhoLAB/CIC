@@ -7,8 +7,8 @@ function presentsExercise() {
     const salary = prompt('Digite o valor do salário mensal atual: ', 'number');
     const percentage = prompt('Digite o valor do reajuste em %: ', 'number');
 
-    const reajust = encrease(salary, percentage);
-    logger.separationIn(`Com um reajuste de ${percentage}% \no salario vai de: R$ ${salary} \npara: R$ ${reajust}`);
+    const readjustment = encrease(salary, percentage);
+    logger.separationIn(`Com um reajuste de ${percentage}% \no salario vai de: R$ ${salary} \npara: R$ ${readjustment}`);
 }
 
 function encrease(salary, percentage) { 
