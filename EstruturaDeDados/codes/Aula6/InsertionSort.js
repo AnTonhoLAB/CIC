@@ -1,5 +1,4 @@
 
-
 function insertionSort(elements) { 
     for(var i = 1; i < elements.length; i ++) { 
         var eleito = elements[i]
