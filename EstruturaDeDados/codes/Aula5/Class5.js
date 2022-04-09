@@ -38,3 +38,7 @@ function bubbleSortWhile(array) {
 logger.separationIn(array);
 
 logger.finishApp();
+
+module.exports = {
+    bubbleSortFor
+}
