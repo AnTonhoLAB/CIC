@@ -1,11 +1,11 @@
-const logger = require('../../../Common/Logger');
-const prompt = require('../../../Common/PromptSync/prompt');
-
-logger.startApp();
+const logger = require('./Logger');
+const prompt = require('./PromptSync/prompt');
 
 function startAppMenu(exercisesFactory) { 
+    logger.startApp();
+
     while(true) { 
-        logOptions();
+        logOptions(exercisesFactory);
         const userChoice = prompt('Escolha Uma opção:  ', 'number');
     
         if (Object.hasOwn(exercisesFactory.exercises, userChoice - 1)) { 
@@ -23,9 +23,11 @@ function startAppMenu(exercisesFactory) {
             break;
         }
     }
+
+    logger.finishApp();
 }
 
-function logOptions() { 
+function logOptions(exercisesFactory) { 
     logger.logl('Escolha o exercicio');
 
     exercisesFactory.exercises.forEach((exercise) => {
@@ -34,4 +36,6 @@ function logOptions() {
     logger.logl('0 - Sair');
 }
 
-logger.finishApp();
+module.exports = {
+    startAppMenu,
+}
