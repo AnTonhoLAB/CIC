@@ -1,5 +1,4 @@
 const logger = require('../../../Common/Logger');
-const prompt = require('../../../Common/PromptSync/prompt');
 
 logger.startApp();
 
