@@ -2,7 +2,7 @@ const logger = require('../../../Common/Logger');
 const prompt = require('../../../Common/PromptSync/prompt');
 const bubble = require('../Aula5/Class5');
 
-const description = "1 - Crie um programa que dado uma string, coloque as letras dela em ordem \ncrescente pelo algoritmo Bubblesort." 
+const description = "Crie um programa que dado uma string, coloque as letras dela em ordem \ncrescente pelo algoritmo Bubblesort." 
 
 function presentsExercise() { 
     logger.separation();
