@@ -30,10 +30,12 @@ function startAppMenu(exercisesFactory) {
 function logOptions(exercisesFactory) { 
     logger.logl('Escolha o exercicio');
 
-    exercisesFactory.exercises.forEach((exercise) => {
-            logger.logl(exercise.description);
-        });
+    exercisesFactory.exercises.forEach(presentExercise)
     logger.logl('0 - Sair');
+}
+
+function presentExercise(exercise, index, arr) {
+  logger.logl(`${index + 1} - ${exercise.description}`);
 }
 
 module.exports = {
