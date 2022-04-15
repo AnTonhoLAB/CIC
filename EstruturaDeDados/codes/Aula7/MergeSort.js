@@ -1,10 +1,9 @@
-
+const Logger = require("nodemon/lib/utils/log")
 
 function mergeSort(x, start, end) { 
     let middle 
     if (start < end) { 
         middle = Math.trunc((start + end) / 2)
-        console.log(middle)
         mergeSort(x, start, middle)
         mergeSort(x, middle + 1, end)
         interpolate(x, start, end, middle) 
@@ -39,13 +38,13 @@ function interpolate(x, start, end, middle) {
         freePos = freePos + 1
     }
 
-    for (let i = vetStart1; i <= end; i++) { 
+    for (let i = start; i <= end; i++) { 
         x[i] = aux[i]
     }
 }
-let arrayToSort = [5,4,6,7,1,8,2,9]
 
-console.log(arrayToSort)
+let arrayToSort = [5,4,6,7,1,8,2,3,9,19,0]
+
+console.log("Array para ordenar", arrayToSort)
 mergeSort(arrayToSort, 0, arrayToSort.length -1)
-console.log(arrayToSort)
-
+console.log("Array ordenado", arrayToSort)
