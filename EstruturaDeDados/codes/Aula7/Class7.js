@@ -1,6 +1,5 @@
 let text = "Oi seja bem vindo"
 
-
 // Com casting
 let arrayOfCharactersA = Array.from(text)
 console.log(arrayOfCharactersA)
@@ -16,22 +15,3 @@ for (let charactere of text) {
 }
 
 console.log(arrayOfCharactersC)
-
-
-
-
-
-
-
-
-var dict = {
-    Name: "Eric",
-    Age: 23,
-    Job: "Freelancer",
-    Skills : "JavaScript"
-  };
-
-  
-
-  console.log(dict['Job'])
-  console.log(dict.Job)
