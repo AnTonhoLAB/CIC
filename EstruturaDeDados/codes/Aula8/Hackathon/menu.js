@@ -41,25 +41,35 @@ function cadastrar(){
     prompt('Usuario cadastrado com sucesso, digite qualquer caractere pra continuar: ')
 }
 
-const quickSort = (arr, min, max, orderBy) => {
+const quickSort = (arr, min, max, sortBy, order) => {
     if (min >= max){
         return
     }
 
-    const pivo = partition(arr, min, max, orderBy)
-    quickSort(arr, min, pivo - 1, orderBy)
-    quickSort(arr, pivo + 1, max, orderBy)
+    const pivo = partition(arr, min, max, sortBy, order)
+    quickSort(arr, min, pivo - 1, sortBy, order)
+    quickSort(arr, pivo + 1, max, sortBy, order)
 }  
 
-const partition = (arr, min, max, orderBy) => {
+const partition = (arr, min, max, sortBy, order) => {
     //Last element as pivot
     let pivo = arr[max]
     let i = min
     for (let j = min; j < max; j++){
-        if (arr[j][orderBy] <= pivo[orderBy]){
-            swap (arr, i, j)
-            i++
+       
+        if (order) { 
+            if (arr[j][sortBy] <= pivo[sortBy]){
+                swap (arr, i, j)
+                i++
+            }
+        } else { 
+            if (arr[j][sortBy] >= pivo[sortBy]){
+                swap (arr, i, j)
+                i++
+            }
         }
+
+
     }
 
     swap (arr, i, max)
@@ -85,6 +95,9 @@ while (true){
     } else if(escolhaUser == 2) {
         cadastrar()
     } else if(escolhaUser == 0) {
+        beautifulSpaceClear()
+        console.log("Até mais! bye")
+        beautifulSpace()
         break
     } else {
         console.log('Escolha inválida')
@@ -103,7 +116,7 @@ function listar() {
 
     // ler do usuario as opções
     const escolhaUser2 = prompt('Digite a opção desejada: ','number')
-    let orderBy = "id"
+    let sortBy = "id"
 
     switch (escolhaUser2) { 
         case 1:
@@ -117,24 +130,39 @@ function listar() {
             break
         default: 
             console.clear()
-            prompt('Opção invalida, digite qualquer caractere para continuar: ')
+            prompt('Opção invalida, digite enter para continuar: ')
             return
     }
 
     // escolher se é crescente ou descrescente
-    // beautifulSpaceClear()   
-    // console.log("1- Crescente")
-    // console.log("2- Decrescente")
-    // const escolhaUser3 = prompt('Digite a opção desejada: ','numeber')
-    // beautifulSpace()
+    beautifulSpaceClear()
+    console.log("1- Crescente")
+    console.log("2- Decrescente")
+    beautifulSpace()
+ 
+    let order = true
+    const escolhaUserOrder = prompt('Digite a opção desejada: ','number')
+
+    switch (escolhaUserOrder) { 
+        case 1:
+            order = true
+            break
+        case 2: 
+            order = false 
+            break
+        default: 
+            console.clear()
+            prompt('Opção invalida, digite enter para continuar: ')
+            return
+    }
 
     // Chamar o quicksort com os parametros
     beautifulSpaceClear()
-    quickSort(listauser, 0, listauser.length - 1, orderBy)
+    quickSort(listauser, 0, listauser.length - 1, sortBy, order)
     console.log(listauser)
     beautifulSpace()
 
-    prompt('Digite qualquer caractere para continuar: ')
+    prompt('Digite enter para continuar: ')
 }
 
 function beautifulSpace() { 
