@@ -18,29 +18,6 @@ let listauser = [
     { id: 14, nome: "Simom Ohm", idade: 35 }
 ]
 
-console.clear()
-
-// função de cadastrar o usuario
-function cadastrar(){
-    // pega as informações do usuario
-    beautifulSpaceClear()
-    var nome = prompt('Digite seu nome: ','any')
-    var idade = prompt('Digite sua idade: ','number')
-    var userid = ultimoid + 1
-    ultimoid = ultimoid + 1
-    // transforma os dados em objeto
-    const usuario = { 
-        id: userid,
-        nome: nome,
-        idade: idade
-    }
-    // coloca o objeto dentro do array
-    listauser.push(usuario)
-
-    beautifulSpaceClear()
-    prompt('Usuario cadastrado com sucesso, digite qualquer caractere pra continuar: ')
-}
-
 const quickSort = (arr, min, max, sortBy, order) => {
     if (min >= max){
         return
@@ -56,7 +33,6 @@ const partition = (arr, min, max, sortBy, order) => {
     let pivo = arr[max]
     let i = min
     for (let j = min; j < max; j++){
-       
         if (order) { 
             if (arr[j][sortBy] <= pivo[sortBy]){
                 swap (arr, i, j)
@@ -68,8 +44,6 @@ const partition = (arr, min, max, sortBy, order) => {
                 i++
             }
         }
-
-
     }
 
     swap (arr, i, max)
@@ -104,6 +78,31 @@ while (true){
     }  
 }   
 
+// função de cadastrar o usuario
+function cadastrar(){
+
+    // pega as informações do usuario
+    beautifulSpaceClear()
+    var nome = prompt('Digite seu nome: ','any')
+    var idade = prompt('Digite sua idade: ','number')
+    var userid = ultimoid + 1
+    ultimoid = ultimoid + 1
+
+    // transforma os dados em objeto
+    const usuario = { 
+        id: userid,
+        nome: nome,
+        idade: idade
+    }
+    
+    // coloca o objeto dentro do array
+    listauser.push(usuario)
+
+    beautifulSpaceClear()
+    prompt('Usuario cadastrado com sucesso, digite qualquer caractere pra continuar: ')
+}
+
+// função de listar o usuario
 function listar() {
 
     // mostrar ao usuario as opções: listar por id, nome ou idade
@@ -134,12 +133,13 @@ function listar() {
             return
     }
 
-    // escolher se é crescente ou descrescente
+    // mostrar ao usuario as opções: crescente ou descrescente
     beautifulSpaceClear()
     console.log("1- Crescente")
     console.log("2- Decrescente")
     beautifulSpace()
  
+    // escolher se é crescente ou descrescente
     let order = true
     const escolhaUserOrder = prompt('Digite a opção desejada: ','number')
 
@@ -158,8 +158,10 @@ function listar() {
 
     // Chamar o quicksort com os parametros
     beautifulSpaceClear()
+
     quickSort(listauser, 0, listauser.length - 1, sortBy, order)
     console.log(listauser)
+    
     beautifulSpace()
 
     prompt('Digite enter para continuar: ')
