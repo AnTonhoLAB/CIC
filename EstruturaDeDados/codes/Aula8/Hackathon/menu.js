@@ -175,7 +175,5 @@ function beautifulSpace() {
 
 function beautifulSpaceClear() { 
     console.clear()
-    console.log("")
-    console.log("-----------------------------------")
-    console.log("")
+    beautifulSpace()
 }
