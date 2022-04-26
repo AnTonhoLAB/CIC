@@ -18,7 +18,6 @@ function startAppMenu(exercisesFactory) {
     
         logger.log('Deseja continuar?');
         const continueChoice = prompt('digite 0 pra sair ou qualquer outro numero para continuar:  ', 'number');
-        
         if (continueChoice == 0) { 
             break;
         }
