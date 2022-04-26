@@ -119,13 +119,13 @@ function listar() {
 
     switch (escolhaUser2) { 
         case 1:
-            orderBy = "id" 
+            sortBy = "id" 
             break
         case 2: 
-            orderBy = "nome" 
+        sortBy = "nome" 
             break
         case 3:
-            orderBy = "idade" 
+            sortBy = "idade" 
             break
         default: 
             console.clear()
