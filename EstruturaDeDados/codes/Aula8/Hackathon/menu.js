@@ -23,8 +23,9 @@ console.clear()
 // função de cadastrar o usuario
 function cadastrar(){
     // pega as informações do usuario
-    var nome = prompt('Digite seu nome:','any')
-    var idade = prompt('Digite sua idade:','number')
+    beautifulSpaceClear()
+    var nome = prompt('Digite seu nome: ','any')
+    var idade = prompt('Digite sua idade: ','number')
     var userid = ultimoid + 1
     ultimoid = ultimoid + 1
     // transforma os dados em objeto
@@ -35,24 +36,27 @@ function cadastrar(){
     }
     // coloca o objeto dentro do array
     listauser.push(usuario)
+
+    beautifulSpaceClear()
+    prompt('Usuario cadastrado com sucesso, digite qualquer caractere pra continuar: ')
 }
 
-const quickSort = (arr, min, max) => {
+const quickSort = (arr, min, max, orderBy) => {
     if (min >= max){
         return
     }
 
-    const pivo = partition(arr, min, max)
-    quickSort(arr, min, pivo - 1)
-    quickSort(arr, pivo + 1, max)
+    const pivo = partition(arr, min, max, orderBy)
+    quickSort(arr, min, pivo - 1, orderBy)
+    quickSort(arr, pivo + 1, max, orderBy)
 }  
 
-const partition = (arr, min, max) => {
+const partition = (arr, min, max, orderBy) => {
     //Last element as pivot
     let pivo = arr[max]
     let i = min
     for (let j = min; j < max; j++){
-        if (arr[j] <= pivo){
+        if (arr[j][orderBy] <= pivo[orderBy]){
             swap (arr, i, j)
             i++
         }
@@ -69,50 +73,79 @@ const swap = (arr, left, right) =>  {
 }
 
 while (true){
-    break
+    beautifulSpaceClear()
     console.log("1- Listar")
     console.log("2- Cadastrar")
     console.log("0- Sair")
+    beautifulSpace()
     const escolhaUser = prompt('Digite a opção desejada: ','numeber')
-    console.log(" Voce escolheu a opção ",escolhaUser)
 
-    if(escolhaUser==1)
-    {
+    if(escolhaUser == 1) {
         listar()
-    } else if(escolhaUser==2){
+    } else if(escolhaUser == 2) {
         cadastrar()
-    } else if(escolhaUser==0){
+    } else if(escolhaUser == 0) {
         break
     } else {
         console.log('Escolha inválida')
     }  
 }   
 
+function listar() {
 
-function listar(){
-    quickSort(listauser, 0, listauser.length - 1)
-    console.log(listauser)
-
-    /*
-// escolher a opção: listar por id, nome ou idade
-    console.log(" Digite a opção que deseja ordenar: ")
+    // mostrar ao usuario as opções: listar por id, nome ou idade
+    beautifulSpaceClear()
+    console.log("Digite a opção que deseja ordenar: ")
     console.log("1- ID")
     console.log("2- Nome")
     console.log("3- Idade")
-    const escolhaUser2 = prompt('Digite a opção desejada: ','numeber')
-    console.log(" Voce escolheu a opção ",escolhaUser2)
-// escolher se é crescente ou descrescente
-    console.log("1- Crescente")
-    console.log("2- Decrescente")
-    const escolhaUser3 = prompt('Digite a opção desejada: ','numeber')
-    console.log(" Voce escolheu a opção ",escolhaUser3)
-    console.log(listauser)
+    beautifulSpace()
+
+    // ler do usuario as opções
+    const escolhaUser2 = prompt('Digite a opção desejada: ','number')
+    let orderBy = "id"
+
+    switch (escolhaUser2) { 
+        case 1:
+            orderBy = "id" 
+            break
+        case 2: 
+            orderBy = "nome" 
+            break
+        case 3:
+            orderBy = "idade" 
+            break
+        default: 
+            console.clear()
+            prompt('Opção invalida, digite qualquer caractere para continuar: ')
+            return
+    }
+
+    // escolher se é crescente ou descrescente
+    // beautifulSpaceClear()   
+    // console.log("1- Crescente")
+    // console.log("2- Decrescente")
+    // const escolhaUser3 = prompt('Digite a opção desejada: ','numeber')
+    // beautifulSpace()
 
     // Chamar o quicksort com os parametros
-    */
+    beautifulSpaceClear()
+    quickSort(listauser, 0, listauser.length - 1, orderBy)
+    console.log(listauser)
+    beautifulSpace()
+
+    prompt('Digite qualquer caractere para continuar: ')
 }
 
-let arrs = [5,6,2,1,9,7]
-console.log("array para ordenar :", arrs)
-quickSort(arrs, 0, arrs.length - 1)
-console.log("array ja ordenado  :", arrs)
+function beautifulSpace() { 
+    console.log("")
+    console.log("-----------------------------------")
+    console.log("")
+}
+
+function beautifulSpaceClear() { 
+    console.clear()
+    console.log("")
+    console.log("-----------------------------------")
+    console.log("")
+}
